@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import Article from "./Article";
+import { setArticles } from "../state/actionCreators";
 
-export function News({ articles }) {
+export function News({ articles, setArticles }) {
+  useEffect(() => {
+    setArticles();
+  }, []);
   return (
     <div>
       {articles.map((curr, index) => {
@@ -23,4 +27,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(News);
+export default connect(mapStateToProps, { setArticles })(News);

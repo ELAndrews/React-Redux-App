@@ -9,7 +9,8 @@ import { combineReducers, createStore, compose, applyMiddleware } from "redux";
 import * as reducers from "./state/reducers";
 
 const mainReducer = combineReducers({
-  count: reducers.countReducer
+  count: reducers.countReducer,
+  articles: reducers.articlesReducer
 });
 
 const store = createStore(

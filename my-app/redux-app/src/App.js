@@ -1,7 +1,7 @@
 import React from "react";
-
 import Header from "./components/Header";
 import Counter from "./components/Counter";
+import News from "./components/News";
 
 import "./App.css";
 
@@ -10,6 +10,7 @@ function App() {
     <div className="App">
       <Header />
       <Counter />
+      <News />
     </div>
   );
 }

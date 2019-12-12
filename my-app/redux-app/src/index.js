@@ -10,7 +10,8 @@ import * as reducers from "./state/reducers";
 
 const mainReducer = combineReducers({
   count: reducers.countReducer,
-  articles: reducers.articlesReducer
+  articles: reducers.articlesReducer,
+  color: reducers.colorPicker
 });
 
 const store = createStore(

@@ -2,7 +2,8 @@ import * as types from "./actionTypes";
 
 const initialState = {
   count: 0,
-  articles: []
+  articles: [],
+  color: "default"
 };
 
 export function countReducer(count = initialState.count, action) {
@@ -20,5 +21,14 @@ export function articlesReducer(articles = initialState.articles, action) {
       return action.payload;
     default:
       return articles;
+  }
+}
+
+export function colorPicker(color = initialState.color, action) {
+  switch (action.type) {
+    case types.SET_COLOR:
+      return action.payload;
+    default:
+      return color;
   }
 }

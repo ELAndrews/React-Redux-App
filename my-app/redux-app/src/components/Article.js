@@ -5,9 +5,11 @@ import styled from "styled-components";
 const ArticleContainer = styled.div`
   background-color: #fff;
   box-shadow: 0px 3px 5px 0px #b3b3b3;
-  margin: 5%;
+  margin: 10px;
   padding: 4% 4%;
   max-width: 300px;
+  height: 400px;
+  overflow: scroll;
 `;
 
 const Img = styled.img`
@@ -17,7 +19,7 @@ const Img = styled.img`
 
 const Link = styled.a`
   text-decoration: none;
-  background-color: #c5d5c5
+  background-color: #c5d5c5;
   color: #fff;
   padding: 5px 10px;
   border-radius: 3px;
@@ -39,7 +41,6 @@ export function Article(props) {
         <h3>{props.curr.title}</h3>
         <p>{props.curr.author}</p>
         <span>{props.curr.source.name}</span>
-        <p>{props.curr.publishedAt}</p>
         <p>{props.curr.description}</p>
       </div>
       <Img src={props.curr.urlToImage} alt={props.curr.title} />

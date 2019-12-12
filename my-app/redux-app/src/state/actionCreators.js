@@ -12,10 +12,13 @@ export const setArticles = () => dispatch => {
     )
     .then(responce => {
       const articles = responce.data.articles;
-      console.log(articles);
       dispatch({ type: types.SET_ARTICLES, payload: articles });
     })
     .catch(error => {
       console.log(error);
     });
+};
+
+export const colorPicker = color => {
+  return { type: types.SET_COLOR, payload: { color } };
 };

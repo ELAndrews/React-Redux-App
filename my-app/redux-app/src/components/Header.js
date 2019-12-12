@@ -1,20 +1,21 @@
 import React from "react";
-import { connect } from "react-redux";
+import styled from "styled-components";
 
-export function Header({ count, articles }) {
+const HeaderContainer = styled.div`
+  width: 100vw;
+  height: 100px;
+  background-color: #fff;
+  position: absolute;
+  padding-top: 20px;
+  top: 0px;
+  left: 0px;
+  text-align: center;
+`;
+
+export default function Header() {
   return (
-    <div>
-      <h1>Header</h1>
-      {count}
-      {articles}
-    </div>
+    <HeaderContainer>
+      <h1>Latest Apple News Articles</h1>
+    </HeaderContainer>
   );
 }
-
-function mapStateToProps(state) {
-  return {
-    count: state.count
-  };
-}
-
-export default connect(mapStateToProps)(Header);

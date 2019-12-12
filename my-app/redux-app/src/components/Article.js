@@ -2,16 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
 
-const ArticleContainer = styled.div`
-  background-color: #fff;
-  box-shadow: 0px 3px 5px 0px #b3b3b3;
-  margin: 10px;
-  padding: 4% 4%;
-  max-width: 300px;
-  height: 400px;
-  overflow: scroll;
-`;
-
 const Img = styled.img`
   width: 90%;
   padding: 10px 0px;
@@ -36,7 +26,7 @@ const Link = styled.a`
 export function Article(props) {
   console.log(props);
   return (
-    <ArticleContainer>
+    <div className="articleContainer">
       <div>
         <h3>{props.curr.title}</h3>
         <p>{props.curr.author}</p>
@@ -45,7 +35,7 @@ export function Article(props) {
       </div>
       <Img src={props.curr.urlToImage} alt={props.curr.title} />
       <Link href={props.curr.url}>Learn More</Link>
-    </ArticleContainer>
+    </div>
   );
 }
 

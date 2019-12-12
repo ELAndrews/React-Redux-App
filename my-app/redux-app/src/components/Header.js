@@ -1,18 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { colorPicker } from "../state/actionCreators";
-
-const HeaderContainer = styled.div`
-  width: 100vw;
-  height: 100px;
-  background-color: #fff;
-  position: absolute;
-  padding-top: 20px;
-  top: 0px;
-  left: 0px;
-  text-align: center;
-`;
+import toggleClassNames from "../hook/colorMode";
+import useLocalStorage from "../hook/useLocalStorage";
 
 const ButtonContainer = styled.div`
   position: absolute;
@@ -21,13 +12,16 @@ const ButtonContainer = styled.div`
 `;
 
 export function Header({ color, colorPicker }) {
+  const [pickedColor, setPickedColor] = useLocalStorage("color", "default");
   const handleClick = e => {
     const color = e.target.value;
     colorPicker(color);
+    toggleClassNames(color);
+    setPickedColor(color);
   };
 
   return (
-    <HeaderContainer>
+    <div className="headerContainer">
       <h1>Latest Apple News Articles</h1>
       <ButtonContainer>
         <span>Color Scheme: </span>
@@ -41,7 +35,7 @@ export function Header({ color, colorPicker }) {
           Lets Get Crazy
         </button>
       </ButtonContainer>
-    </HeaderContainer>
+    </div>
   );
 }
 

@@ -1,9 +1,9 @@
 import React from "react";
 import Header from "./components/Header";
-import Counter from "./components/Counter";
+// import Counter from "./components/Counter";
 import News from "./components/News";
 
-import "./App.css";
+import "./App.scss";
 
 function App() {
   return (
